@@ -1,0 +1,13 @@
+<h1>SIGN IN</h1>
+
+<form action="/signin" method="post">
+    <input type="hidden" value= "<%= form_authenticity_token() %>" name="authenticity_token"/>
+    Username: <input type="text" name="user[username]" id="user_username"> <br>
+    <input type="submit" value="Sign In">
+</form>
+
+<% if flash[:notice] %>
+    <% flash[:notice].each do |note| %>
+        <p id="notice"><%= note %></p>  
+    <% end %>
+<% end %>
